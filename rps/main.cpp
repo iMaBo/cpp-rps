@@ -5,10 +5,16 @@
 //  Created by Marco Boekholt on 19/06/2023.
 //
 
-#include <iostream>
+#include "Logger.hpp"
+#include "Game.hpp"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Logger log;
+    log.SetLogLevel(Logger::Level::Info);
+    
+    Game game;
+    game.SetLogger(log);
+    game.Play();
+    
     return 0;
 }
